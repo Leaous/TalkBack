@@ -1,12 +1,15 @@
 from google.cloud import translate
 import os, pyaudio
 
+#################################################
+
 #user credentials - adjust for your json file path
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = (
 "/Users/spencerburleigh/Desktop/Hack112Translate-a28c06c7603b.json")
 
-##
+#################################################
 
+#make api call to translate input
 def runTranslate(text, language):
     #instantiates client
     translate_client = translate.Client()
@@ -18,6 +21,7 @@ def runTranslate(text, language):
 
     return('{}'.format(translation['translatedText']))
 
+#use mac system voices to dictate translated output
 def speak(translatedText, language):
     if language == "ar":
         os.system("say -v "+"Tarik "+ translatedText)
@@ -44,6 +48,7 @@ def speak(translatedText, language):
     elif language == "es":
         os.system("say -v "+"Jorge "+ translatedText)
 
+#test translate & text2speech
 def testSpeak():
     speak(runTranslate("This is only a test. Do not be alarmed", "ar"), "ar")
     speak(runTranslate("This is only a test. Do not be alarmed", "zh"), "zh")
