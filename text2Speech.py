@@ -1,16 +1,19 @@
 from google.cloud import translate
-import os, pyaudio
+from os import *
+import os
+import io
 
-#################################################
+# Imports the Google Cloud client library
+from google.cloud import speech
+from google.cloud.speech import enums
+from google.cloud.speech import types
+from audio import *
+from speechtotext import *
 
-#user credentials - adjust for your json file path
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = (
-"/Users/spencerburleigh/Desktop/Hack112Translate-a28c06c7603b.json")
 
-#################################################
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=("/Users/spencerburleigh/Downloads/servicekey.json")
 
-#make api call to translate input
-def runTranslate(text, language):
+def runTranslate(text, language="en"):
     #instantiates client
     translate_client = translate.Client()
 
@@ -21,46 +24,34 @@ def runTranslate(text, language):
 
     return('{}'.format(translation['translatedText']))
 
-#use mac system voices to dictate translated output
-def speak(translatedText, language):
+def speak(text, language):
     if language == "ar":
-        os.system("say -v "+"Tarik "+ translatedText)
+        system("say -v "+"Tarik "+ text)
     elif language == "zh":
-        os.system("say -v "+"Ting-Ting "+ translatedText)
+        system("say -v "+"Ting-Ting "+ text)
     elif language == "en":
-        os.system("say -v "+"Samantha "+ translatedText)
+        system("say -v "+"Samantha "+ text)
     elif language == "fr":
-        os.system("say -v "+"Aurelie "+ translatedText)
+        system("say -v "+"Aurelie "+ text)
     elif language == "de":
-        os.system("say -v "+"Petra "+ translatedText)
+        system("say -v "+"Petra "+ text)
     elif language == "hi":
-        os.system("say -v "+"Lekha "+ translatedText)
+        system("say -v "+"Lekha "+ text)
     elif language == "it":
-        os.system("say -v "+"Paola "+ translatedText)
+        system("say -v "+"Paola "+ text)
     elif language == "ja":
-        os.system("say -v "+"Otoya "+ translatedText)
+        system("say -v "+"Otoya "+ text)
     elif language == "ko":
-        os.system("say -v "+"Yuna "+ translatedText)
+        system("say -v "+"Yuna "+ text)
     elif language == "pt":
-        os.system("say -v "+"Felipe "+ translatedText)
+        system("say -v "+"Felipe "+ text)
     elif language == "ru":
-        os.system("say -v "+"Yuri "+ translatedText)
+        system("say -v "+"Yuri "+ text)
     elif language == "es":
-        os.system("say -v "+"Jorge "+ translatedText)
+        system("say -v "+"Jorge "+ text)
 
-#test translate & text2speech
-def testSpeak():
-    speak(runTranslate("This is only a test. Do not be alarmed", "ar"), "ar")
-    speak(runTranslate("This is only a test. Do not be alarmed", "zh"), "zh")
-    speak(runTranslate("This is only a test. Do not be alarmed", "en"), "en")
-    speak(runTranslate("This is only a test. Do not be alarmed", "fr"), "fr")
-    speak(runTranslate("This is only a test. Do not be alarmed", "de"), "de")
-    speak(runTranslate("This is only a test. Do not be alarmed", "hi"), "hi")
-    speak(runTranslate("This is only a test. Do not be alarmed", "it"), "it")
-    speak(runTranslate("This is only a test. Do not be alarmed", "ja"), "ja")
-    speak(runTranslate("This is only a test. Do not be alarmed", "ko"), "ko")
-    speak(runTranslate("This is only a test. Do not be alarmed", "pt"), "pt")
-    speak(runTranslate("This is only a test. Do not be alarmed", "ru"), "ru")
-    speak(runTranslate("This is only a test. Do not be alarmed", "es"), "es")
-
-testSpeak()
+def run():
+    record("test.rav")
+    text=s2t("test.rav")
+    text=runTranslate(text, "zh")
+    speak(text, "zh")
