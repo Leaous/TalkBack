@@ -8,7 +8,7 @@ from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 from audio import *
-from speechtotext import *
+from speech2text import *
 
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=("/Users/spencerburleigh/Downloads/servicekey.json")
