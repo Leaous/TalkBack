@@ -6,13 +6,13 @@ TalkBack helps you to have a natural conversation with someone who speaks anothe
 
 My role in the project was to design the general flow of the system as well as the translation (translate.py) and convertion of translated text to speech using the system voices (text2speech.py).
 
-# Built With:
+#Built With:
 
 - Python + PyAudio + tkinter
 - Google Cloud transcription/translate APIs
 - macOS System Voices 
 
-# Languages Supported: 
+#Languages Supported: 
 
 - English
 - Arabic
