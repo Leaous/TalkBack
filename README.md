@@ -1,6 +1,6 @@
 # TalkBack
 
-This is the Hack112 project Rebecca Hong, Aditya Shekar and I built over ~10 hours. Thank you to Google, Panatir, Hudson River Trading, Oracle, and Union Pacific for sponsoring this awesome event. Thank you to 112 staff for making us go to sleep. 
+This is the Hack112 project Rebecca Hong, Aditya Shekar and I built over ~10 hours. Thank you to Google, Panatir, Hudson River Trading, Oracle, and Union Pacific for sponsoring this awesome event. Thank you to 112 staff for making us go to sleep.
 
 TalkBack helps you to have a natural conversation with someone who speaks another language. Select a target language and then  press record. When the program detects you are done speaking, it converts the audio to speech, translates it, and then uses the appropriate macOS system voice to speak the translation. With a fast internet connection, spoken output can take as little as 5 seconds to be returned.
 
