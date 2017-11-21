@@ -8,4 +8,4 @@ We make extensive use of the Google Cloud platform's APIs to maximize transcript
 
 Languages Supported: English, Arabic, Chinese, French, German, Hindi, Italian, Japanese, Korean, Portuguese, Russian, Spanish
 
-My role in the project was to design the general flow of the system as well as the translation (t.py) and convertion of translated text to speech using the system voices (text2speech.py).
+My role in the project was to design the general flow of the system as well as the translation (translate.py) and convertion of translated text to speech using the system voices (text2speech.py).
