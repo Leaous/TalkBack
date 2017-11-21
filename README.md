@@ -8,7 +8,7 @@ My role in the project was to design the general flow of the system as well as t
 
 # Built With:
 
-- PyAudio
+- Python + PyAudio + tkinter
 - Google Cloud transcription/translate APIs
 - macOS System Voices 
 
