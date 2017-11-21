@@ -44,13 +44,13 @@ def play(file):
 ######################### Recording a WAV file ############################
 ###########################################################################
 
-def record(data):
+def record(file):
     CHUNK = 1024 #measured in bytes
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 16000 #common sampling frequency
     RECORD_SECONDS=5
-    file="test.rav"
+
     p = pyaudio.PyAudio()
 
     stream = p.open(format=FORMAT,
@@ -63,8 +63,8 @@ def record(data):
 
     frames = []
     for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-        soundData = stream.read(CHUNK)
-        frames.append(soundData)
+        data = stream.read(CHUNK)
+        frames.append(data)
 
     print("* done recording")
 
