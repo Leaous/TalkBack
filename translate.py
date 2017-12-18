@@ -100,23 +100,3 @@ canvas.pack()
 draw(canvas, width, height)
 root.mainloop()
 print("bye")
-
-
-
-
-
-
-
-"""
-from tkinter import *
-
-master = Tk()
-
-def callback():
-    print ("click!")
-
-b = Button(master, text="Record", command=callback)
-b.pack()
-
-mainloop()
-"""
