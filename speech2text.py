@@ -78,7 +78,8 @@ def initLangCodes():
     languages["russian"]="ru"
     languages["spanish"]="es"
     return languages
-'''
+
+''' #sometimes needed depending on input
 def initLangCodes():
     languages={}
     languages["arabic"]="ar-SA"
